@@ -1,7 +1,7 @@
 const Sequelize = require('sequelize');
 
 module.exports = (sequilize, DataTypes) => {
-	const Patrons = sequilize.define('Patrons', {
+	const Users = sequilize.define('Users', {
 		firstName: {
 			type: Sequelize.STRING,
 			allowNull: false,
@@ -32,13 +32,16 @@ module.exports = (sequilize, DataTypes) => {
 	        notEmpty: true,
 	      },
 	    },
+	    patronGallery: {
+	    	type: Sequelize.ARRAY(Sequelize.TEXT),
+	    	allowNull: true,
+	    }
 	});
 
-	Patrons.associate = (models) => {
-		//models.Patrons.hasMany(models.Votes);
-		//models.Patrons.belongsTo(models.Polls);
-
+	Users.associate = (models) => {
+		//models.Users.hasMany(models.Votes);
+		//models.Users.belongsTo(models.Polls);
 	}
 
-	return Patrons;
+	return Users;
 };
