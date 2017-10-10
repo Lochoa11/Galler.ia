@@ -1,38 +1,36 @@
-# Galler.ia
-
-Lin Ochoa, Andres Gajardo, Ta Frankie 
-
-Galler.ia is a website dedicated to give you the best slide shows. Photographers or any other artists can use it to showcase their work. Viewers can turn their devices into live picture frames so long as it is connected to the internet and can run a browser. Galler.ia would be considered as a content creation and distribution platform. 
-
-The inspiration came from wanting to turn a computer screen into a live picture frame but not being able to find a good website that can do this. 
-
-At the moment everyone has their own way of setting up background visuals. With our site we plan to make it easier for anyone looking to display visual content. The content could be photos of family events, adventures, landscapes, and macro shots. This would be a free service for the smaller accounts, and a paid service for the premium accounts.
-
-Similar applications are PhotoSnack.com. This site was more dedicated to sharing photos with friends on different social media platform. Another application is imgur.com but they focus on viral images.
-
-Our idea differs because we are trying to enable any screen to be a picture frame.
-
-Users:
-	
-1. Slide show creators - these people create galleries and show case their images. 
-
-2. Viewers - These people have a screen that they want to turn into a picture frame so they can consume the content
-
-3. Moderators - people that remove or flag inappropriate content.
-
-4. Editors - people that pick images that go to the front page
-
-Usecases:
-
-1. Stella wants to display background images in her home but doesn't have photos that she wants to display. Lucky for her she has an old computer that she doesn't use. Stella can use this computer as a picture frame and use Galler.ia to display background visuals. With Galler.ia Stella has a plethora of photos to display.
-
-2. Lenny is a photographer who is looking to build his reputation. He can post to Galler.ia and gain an audience. If his audience is pleased with his work they can fund him directly.
+# Backend Starter Code
 
 
+## Setup
+
+- Edit `package.json`
+    + Add your project name, version, description, authors
+    + Add any other packages you may need
+
+- Edit `config/config.json`
+    + Add your username, password, and database names
 
 
+## Explanations
 
+- `/config/config.json`
+    + This file contains the credentials for connecting to your postgres database. You need to make sure these details match your DB setup.
+- `/controllers`
+    + This is where you should store all the logic handling URL routes and business logic for your app.
+    + `index.js` is where you load up the different files
+    + You can write your controller code in many styles. I've provided you two options in the `home.js` and the `alt.js` files. Pick one style and use it for all of your controllers. This is really a matter of preference.
+- `/models`
+    + This is where your sequelize models will go.
+    + `index.js`: you **do not** have to modify this file. This file connects to the Postgres database for you, loads up all models in the folder, and sets up all associations.
+- `app.js`
+    + This file sets up the basic packages for our projects. Feel free to add more as you see fit.
+    + This file already loads up your controllers, so no additional loading is necessary for that to work.
 
+## Optional
+
+- If you want to add views and handlebars to your server side
+    + Uncomment the corresponding code in `app.js`
+    + Add a `/views` folder and the appropriate templates
 
 
 

@@ -1,15 +1,19 @@
 {
-  "name": "backend-starter-code",
-  "version": "1.0.0",
+  "name": "galleria",
+  "version": "0.0.1",
   "description": "Starter code for an Express/Sequelize backend.",
   "main": "app.js",
   "scripts": {
     "start": "nodemon -L app.js",
     "test": "jest"
   },
-  "author": "Edgardo Molina",
+  "author": "Andres Gajardo, Frankie Ta, Lin Ochoa",
   "license": "ISC",
   "devDependencies": {
+    "eslint-config-recommended": "^1.5.0",
+    "eslint-plugin-import": "^2.7.0",
+    "eslint-plugin-node": "^5.2.0",
+    "eslint-plugin-promise": "^3.5.0",
     "jest": "^21.2.1"
   },
   "dependencies": {
