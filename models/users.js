@@ -32,15 +32,11 @@ module.exports = (sequilize, DataTypes) => {
 	        notEmpty: true,
 	      },
 	    },
-	    patronGallery: {
-	    	type: Sequelize.ARRAY(Sequelize.TEXT),
-	    	allowNull: true,
-	    }
 	});
 
 	Users.associate = (models) => {
-		//models.Users.hasMany(models.Votes);
-		//models.Users.belongsTo(models.Polls);
+		models.Users.hasMany(models.photos);
+		
 	}
 
 	return Users;
