@@ -1,7 +1,7 @@
 {
-  "name": "backend-starter-code",
+  "name": "Galleria",
   "version": "1.0.0",
-  "description": "Starter code for an Express/Sequelize backend.",
+  "description": "Enhance decor with slide shows",
   "main": "app.js",
   "scripts": {
     "start": "nodemon -L app.js",
