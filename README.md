@@ -1,6 +1,6 @@
 # Galler.ia
 
-Lin Ochoa, Andres Gajardo, Ta Frankie 
+Lin Ochoa, Andres Gajardo, Frankie Ta 
 
 Galler.ia is a website dedicated to give you the best slide shows. Photographers or any other artists can use it to showcase their work. Viewers can turn their devices into live picture frames so long as it is connected to the internet and can run a browser. Galler.ia would be considered as a content creation and distribution platform. 
 
