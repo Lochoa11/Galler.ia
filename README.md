@@ -1,5 +1,6 @@
 # Backend Starter Code
 
+Lin Ochoa, Andres Gajardo, Frankie Ta 
 
 ## Setup
 
