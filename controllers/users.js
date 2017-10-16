@@ -38,6 +38,8 @@ const models = require('../models');
 //     }
 // };
 
+// module.exports = UsersController.registerRouter();
+
 const router = express.Router();
 
 router.get('/', (req, res) => {
@@ -47,6 +49,8 @@ router.get('/', (req, res) => {
 });
 
 router.post('/', (req, res) => {
+
+    
     res.json({
         msg: "Successful POST to '/users' route"
     });
@@ -67,6 +71,3 @@ router.delete('/:id', (req, res) => {
 });
 
 module.exports = router;
-
-
-// module.exports = UsersController.registerRouter();
