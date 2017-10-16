@@ -3,8 +3,8 @@ const exphbs = require('express-handlebars');
 const express = require('express');
 const passport = require('passport');
 const GoogleStrategy = require('passport-google-oauth20').Strategy;
-const keys = require('./config/keys');
 
+const keys = require('./config/keys');
 const models = require('./models');
 
 const PORT = process.env.PORT || 8000;
@@ -29,11 +29,9 @@ app.get('/auth/google', passport.authenticate('google', {
 }));
 
 app.get('/auth/google/callback', passport.authenticate('google'));
-
  
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
-
 
 // Uncomment the following if you want to serve up static assets.
 // (You must create the public folder)
@@ -41,35 +39,18 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static('./public'));
 */
 
-// Uncomment the following if you want to use handlebars
-// on the backend. (You must create the views folder)
-<<<<<<< HEAD
-
-=======
-/*
-const exphbs = require('express-handlebars');
->>>>>>> origin/frankie
+// Handlebars config
 app.engine('handlebars', exphbs({
   layoutsDir: './views/layouts',
   defaultLayout: 'main',
 }));
 app.set('view engine', 'handlebars');
 app.set('views', `${__dirname}/views/`);
-<<<<<<< HEAD
-=======
-*/
-
-
->>>>>>> origin/frankie
 
 // Load up all of the controllers
 const controllers = require('./controllers');
 app.use(controllers)
 
-<<<<<<< HEAD
-=======
-
->>>>>>> origin/frankie
 // First, make sure the Database tables and models are in sync
 // then, start up the server and start listening.
 models.sequelize.sync({force: false})
@@ -77,8 +58,4 @@ models.sequelize.sync({force: false})
     app.listen(PORT, () => {
       console.log(`Server is up and running on port: ${PORT}`)
     });
-<<<<<<< HEAD
 });
-=======
-  });
->>>>>>> origin/frankie
