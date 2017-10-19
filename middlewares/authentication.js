@@ -4,33 +4,34 @@ const LocalStrategy = require('passport-local').Strategy;
 
 const Users = require('../models').Users;
 
+// TODO: delete console.logs
+
 function passwordsMatch(passwordSubmitted, storedPassword) {
   return bcrypt.compareSync(passwordSubmitted, storedPassword);
 }
 
 passport.use(new LocalStrategy({
-    usernameField: 'email',
-  },
-  (email, password, done) => {
-    Users.findOne({
-      where: { email },
-    }).then((user) => {
-      debugger;
+  usernameField: 'email',
+},
+(email, password, done) => {
+  Users.findOne({
+    where: { email },
+  }).then((user) => {
+    debugger;
 
-      if(!user) {
-        return done(null, false, { message: 'Incorrect email.' });
-      }
+    if (!user) {
+      return done(null, false, { message: 'Incorrect email.' });
+    }
 
-      if (passwordsMatch(password, user.password) === false) {
-        console.log('\n\nerror match\n\n')
-        return done(null, false, { message: 'Incorrect password.' });
-      }
+    if (passwordsMatch(password, user.password) === false) {
+      console.log('\n\nerror match\n\n');
+      return done(null, false, { message: 'Incorrect password.' });
+    }
 
-      console.log('\n\ncorrect login!!\n\n')
-      return done(null, user, { message: 'Successfully Logged In!' });
-    });
-  })
-);
+    console.log('\n\ncorrect login!!\n\n');
+    return done(null, user, { message: 'Successfully Logged In!' });
+  });
+}));
 
 passport.serializeUser((user, done) => {
   done(null, user.id);
@@ -46,10 +47,10 @@ passport.deserializeUser((id, done) => {
   });
 });
 
-passport.redirectIfLoggedIn = (route) =>
+passport.redirectIfLoggedIn = route =>
   (req, res, next) => (req.user ? res.redirect(route) : next());
 
-passport.redirectIfNotLoggedIn = (route) =>
+passport.redirectIfNotLoggedIn = route =>
   (req, res, next) => (req.user ? next() : res.redirect(route));
 
 module.exports = passport;
