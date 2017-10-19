@@ -18,10 +18,11 @@ router.post('/signup', (req, res) => {
     lastName: req.body.lastName,
     email: req.body.email,
     password: req.body.password,
-  }).then((user) => {
-    res.json(user);
+  }).then(() => {
+    res.redirect('login');
   }).catch((err) => {
-    res.json(err);
+    res.redirect('/signup');
+    alert(err);
   });
 });
 
