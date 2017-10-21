@@ -14,7 +14,7 @@ router.post('/', (req, res) => {
     email: req.body.email,
     password: req.body.password,
   }).then(() => {
-    res.redirect('login');
+    res.redirect('profile');
   }).catch((err) => {
     res.redirect('/');
     alert(err);
