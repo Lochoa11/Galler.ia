@@ -1,12 +1,13 @@
 const passport = require('../middlewares/authentication');
 const router = require('express').Router();
 const models = require('../models');
+const Redirect = require('../middlewares/redirect');
 
-router.get('/', (req, res) => {
+router.get('/', Redirect.ifLoggedIn(), (req, res) => {
   res.render('signup');
 });
 
-router.post('/', (req, res) => {
+router.post('/', Redirect.ifLoggedIn(), (req, res) => {
   // TODO: validation logic here
   models.Users.create({
     firstName: req.body.firstName,

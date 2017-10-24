@@ -1,0 +1,21 @@
+/*default cover image for profile*/
+.cover-image{
+	background-image: url('/images/background.jpg'); 
+	background-repeat:no-repeat; 
+	background-size:cover;
+}
+
+/*For formating purposes*/
+.profile-name-cover{
+	height: 500px;
+}
+
+/*to push the profile picture and the name down*/
+.profile-name{
+	margin-top: 400px;
+}
+
+.profile-picture{
+	width:200px; 
+	height:200px;
+}

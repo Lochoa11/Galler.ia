@@ -1,6 +1,16 @@
-<div class="container">
-  <h1>{{ randomPerson.firstName }}</h1>
-  <h1>{{ randomPerson.lastName }}</h1>
-  <h1>{{ randomPerson.email}}</h1>
-  <h1>{{ randomPerson.id }}</h1>
-</div>
+<header class="cover-image">
+  <div class="container profile-name-cover">
+  	<div class="row profile-name">
+	    <div class="row" align="center">
+	      <div class="col-md-4 col-md-push-4">
+	        <img src="images/profile-default.jpg" class="img-responsive img-circle center-block profile-picture">
+	      </div>
+	    </div>
+	    <div class="row" align="center">
+	      <div class="col-md-6 col-md-push-3">
+	        <h1>{{ randomPerson.firstName }} {{ randomPerson.lastName }}'s Account</h1>
+	      </div>
+	    </div>
+  	</div>
+  </div>
+</header>
