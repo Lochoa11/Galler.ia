@@ -6,6 +6,7 @@ const passport = require('./middlewares/authentication');
 const GoogleStrategy = require('passport-google-oauth20').Strategy;
 const keys = require('./config/keys');
 const models = require('./models');
+const viewHelpers = require('./middlewares/viewHelpers');
 
 const PORT = process.env.PORT || 8000;
 
@@ -56,7 +57,7 @@ app.engine('handlebars', exphbs({
 }));
 app.set('view engine', 'handlebars');
 app.set('views', `${__dirname}/views/`);
-
+app.use(viewHelpers.register());
 
 // Load up all of the controllers
 const controllers = require('./controllers');

@@ -25,7 +25,8 @@
             <li><a href="/">Something Here</a></li>
             <li><a href="/">Something Here  </a></li>
             {{#if cur_user}}
-              <li id="logout"><a href="#">Logout</a></li>
+              <li><a href="/profile">My Account</a></li>
+              <li id="logout"><a href="/logout">Logout</a></li>
             {{ else }}
               <li><a href="/login">Login</a></li>
               <li><a href="/signup">Sign Up</a></li>
@@ -34,7 +35,9 @@
         </div>
       </div>
     </nav>
-    {{{ body }}}
+    <div class="push-down">
+      {{{ body }}}
+    </div>
   </body>
     {{> scripts }}
 </html>
