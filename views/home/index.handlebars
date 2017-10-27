@@ -1,34 +1,41 @@
-<header class="header">
-  <div class="container">
-    <div class="row">
-      <div>
-        <div class="site-heading">
-          <h1>Home</h1>
-          <hr class="small"><br></br><br></br>
-          <span class="subheading">Fresh Pick</span>
-        </div>
-      </div>
-    </div>
-  </div>
-</header>
+<!DOCTYPE html>
+<html>
+<title>W3.CSS</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<body>
 
-<div class="container">
-    <div>
-    
-    <img class="img-valign" src="url('img/picture1.jpeg')" />
-    <span class="text">picture1</span>
-    <img class="img-valign" src="url('img/picture2.jpg')" />
-    <span class="text">picture2</span>
-    
-    </div>
+<h2 class="w3-center">Today's Top Pick</h2>
 
-    <br></br>
+<div class="w3-content w3-display-container">
+  <img class="mySlides" src="img_fjords.jpg" style="width:100%">
+  <img class="mySlides" src="img_lights.jpg" style="width:100%">
+  <img class="mySlides" src="img_mountains.jpg" style="width:100%">
+  <img class="mySlides" src="img_forest.jpg" style="width:100%">
 
-    <div>
-    
-    <img class="img-valign" src="url('images/picture2.jpg')" />
-    <span class="text">picture3</span>
-    <img class="img-valign" src="url('images/picture2.jpg')" />
-    <span class="text">picture4</span>
-    
-    </div>
+  <button class="w3-button w3-black w3-display-left" onclick="plusDivs(-1)">&#10094;</button>
+  <button class="w3-button w3-black w3-display-right" onclick="plusDivs(1)">&#10095;</button>
+</div>
+
+<script>
+var slideIndex = 1;
+showDivs(slideIndex);
+
+function plusDivs(n) {
+  showDivs(slideIndex += n);
+}
+
+function showDivs(n) {
+  var i;
+  var x = document.getElementsByClassName("mySlides");
+  if (n > x.length) {slideIndex = 1}    
+  if (n < 1) {slideIndex = x.length}
+  for (i = 0; i < x.length; i++) {
+     x[i].style.display = "none";  
+  }
+  x[slideIndex-1].style.display = "block";  
+}
+</script>
+
+</body>
+</html>
