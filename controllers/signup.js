@@ -14,8 +14,10 @@ router.post('/', Redirect.ifLoggedIn(), (req, res) => {
     lastName: req.body.lastName,
     email: req.body.email,
     password: req.body.password,
-  }).then(() => {
-    res.redirect('profile');
+  }).then((user) => {
+    req.login(user, () =>
+      res.redirect('/profile')
+    );
   }).catch((err) => {
     res.redirect('/');
     alert(err);
