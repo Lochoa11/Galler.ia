@@ -1,18 +1,17 @@
 /*default cover image for profile*/
 .cover-image{
-	background-image: url('/images/background.jpg'); 
-	background-repeat:no-repeat; 
-	background-size:cover;
+	height: 500px;
+	width: 100%;
 }
 
 /*For formating purposes*/
 .profile-name-cover{
-	height: 500px;
+	/*height: 500px;*/
 }
 
 /*to push the profile picture and the name down*/
 .profile-name{
-	margin-top: 400px;
+	/*margin-top: 400px;*/
 }
 
 .profile-picture{

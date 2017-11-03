@@ -1,16 +1,17 @@
-<header class="cover-image">
+<header>
   <div class="container profile-name-cover">
-  	<div class="row profile-name">
-	    <div class="row" align="center">
-	      <div class="col-md-4 col-md-push-4">
-	        <img src="images/profile-default.jpg" class="img-responsive img-circle center-block profile-picture">
-	      </div>
-	    </div>
-	    <div class="row" align="center">
-	      <div class="col-md-6 col-md-push-3">
-	        <h1>{{ randomPerson.firstName }} {{ randomPerson.lastName }}'s Account</h1>
-	      </div>
-	    </div>
-  	</div>
+  	<img src={{randomPerson.coverPicture}} class="cover-image">
+  	
+    <div class="row" align="center">
+      <div class="col-md-4 col-md-push-4">
+        {{!-- <img src={{}} class="img-responsive img-circle center-block profile-picture"> --}}
+        {{randomPerson.profilePicture}}
+      </div>
+    </div>
+    <div class="row" align="center">
+      <div class="col-md-6 col-md-push-3">
+        <h1>{{ randomPerson.firstName }} {{ randomPerson.lastName }}'s Account</h1>
+      </div>
+    </div>
   </div>
 </header>
