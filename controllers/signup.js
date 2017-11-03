@@ -17,7 +17,7 @@ router.post('/', Redirect.ifLoggedIn(), (req, res) => {
     email: req.body.email,
     password: req.body.password,
     profilePicture: '../public/images/profile-default.jpg',
-    coverPic: '../public/images/background.jpg',
+    coverPicture: '../public/images/background.jpg',
   }).then(() => {
     res.redirect('profile');
   }).catch((err) => {

@@ -33,14 +33,14 @@ module.exports = (sequelize, DataTypes) => {
         notEmpty: true,
       },
     },
-    // profilePicture: {
-    //   type: DataTypes.BLOB,
-    //   allowNull: true,
-    // },
-    // coverPicture: {
-    //   type: DataTypes.BLOB,
-    //   allowNull: true,
-    // },
+    profilePicture: {
+      type: DataTypes.BLOB,
+      allowNull: true,
+    },
+    coverPicture: {
+      type: DataTypes.BLOB,
+      allowNull: true,
+    },
   });
 
   Users.beforeCreate(user =>
