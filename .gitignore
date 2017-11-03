@@ -17,3 +17,5 @@ package-lock.json
 
 # secret
 keys.js
+
+.DS_Store
