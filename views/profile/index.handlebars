@@ -1,11 +1,25 @@
 <header>
   <div class="container profile-name-cover">
-  	<img src={{randomPerson.coverPicture}} class="cover-image">
-  	
+    {{#if randomPerson.coverPicture}}
+      <img src = "images/background.jpg" class="cover-image"/>
+    {{else}}
+       <img src = "images/background.jpg" class="cover-image"/>
+    {{/if}}
     <div class="row" align="center">
       <div class="col-md-4 col-md-push-4">
-        {{!-- <img src={{}} class="img-responsive img-circle center-block profile-picture"> --}}
-        {{randomPerson.profilePicture}}
+          {{#if randomPerson.profilePicture}}
+            <img src= "images/profile-default.jpg" class="profile-picture img-circle"/>
+          {{else}}              
+            {{!-- <form action="/images" class="dropzone profile-picture img-circle dropzoneForm">
+            </form> --}}
+            <img src= "images/profile-default.jpg" class="profile-picture img-circle" id="myId"/>
+            <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+            <script type="text/javascript">
+              $(document).ready(function(){
+                $("img#myId").dropzone({ url: "/images/profile-default.jpg" });
+              });
+            </script>
+          {{/if}}
       </div>
     </div>
     <div class="row" align="center">

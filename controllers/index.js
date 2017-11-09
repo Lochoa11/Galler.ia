@@ -1,6 +1,6 @@
 const express = require('express');
 const home = require('./home');
-const users = require('./users');
+// const users = require('./users');
 const login = require('./login');
 const profile = require('./profile');
 const signup = require('./signup');
@@ -9,7 +9,7 @@ const signup = require('./signup');
 const router = express.Router();
 
 router.use('/', home);
-router.use('/users', users);
+// router.use('/users', users);
 router.use('/login', login);
 router.use('/profile', profile);
 router.use('/signup', signup);

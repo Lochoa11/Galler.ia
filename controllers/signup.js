@@ -16,13 +16,15 @@ router.post('/', Redirect.ifLoggedIn(), (req, res) => {
     lastName: req.body.lastName,
     email: req.body.email,
     password: req.body.password,
-    profilePicture: '../public/images/profile-default.jpg',
-    coverPicture: '../public/images/background.jpg',
-  }).then(() => {
-    res.redirect('profile');
+    profilePicture: null,
+    coverPicture: null,
+  }).then((user) => {
+    req.login(user, () =>
+      res.redirect('/profile')
+    );
   }).catch((err) => {
+    console.log("hello BLAH BLAH BLAH" +err);
     res.redirect('/');
-    alert(err);
   });
 });
 

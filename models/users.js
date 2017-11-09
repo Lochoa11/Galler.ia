@@ -34,12 +34,18 @@ module.exports = (sequelize, DataTypes) => {
       },
     },
     profilePicture: {
-      type: DataTypes.BLOB,
+      type: DataTypes.STRING,
       allowNull: true,
+      validate: {
+        notEmpty: true,
+      }
     },
     coverPicture: {
-      type: DataTypes.BLOB,
+      type: DataTypes.STRING,
       allowNull: true,
+      validate: {
+        notEmpty: true,
+      }
     },
   });
 
