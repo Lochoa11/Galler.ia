@@ -1,3 +1,4 @@
+{{!-- <<<<<<< HEAD
 <header class="header">
   <div class="container">
     <div class="row">
@@ -12,7 +13,7 @@
   </div>
 </header>
 
-{{!-- <div class="container">
+<div class="container">
     <div>
     
     <img class="img-valign" src="url('img/picture1.jpeg')" />
@@ -31,4 +32,35 @@
     <img class="img-valign" src="url('images/picture2.jpg')" />
     <span class="text">picture4</span>
     
-    </div> --}}
+    </div>
+======= --}}
+<html>
+  <head>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.min.js"></script>
+  </head>
+  <body>
+    <div align="center">
+    <ul class="bxslider" align="center">
+      <li><img src="images/picture1.jpeg"></li>
+      <li><img src="images/picture2.jpg"></li>
+      <li><img src="images/picture3.jpg"></li>
+      <li><img src="images/picture4.jpeg"></li>
+      <li><img src="images/profile-default.jpg"></li>
+    </ul>
+    </div>
+    <script>
+      $('.bxslider').bxSlider({
+        auto: true,
+        autoControls: true,
+        stopAutoOnClick: true,
+        pager: true,
+        slideWidth: 600
+      });
+    </script>
+  </body>
+</html>
+{{!-- >>>>>>> development
+ --}}

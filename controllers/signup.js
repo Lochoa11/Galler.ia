@@ -23,7 +23,7 @@ router.post('/', Redirect.ifLoggedIn(), (req, res) => {
       res.redirect('/profile')
     );
   }).catch((err) => {
-    console.log("hello BLAH BLAH BLAH" +err);
+    console.log("error in signup router" +err);
     res.redirect('/');
   });
 });
