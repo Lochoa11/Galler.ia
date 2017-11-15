@@ -23,3 +23,10 @@
 .push-down{
 	margin-top: 50px;
 }
+
+.slidePicture{
+    display: block;
+    width: 100%;
+    height: 400px;
+
+}
