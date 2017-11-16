@@ -6,8 +6,9 @@ router.get('/', Redirect.ifNotLoggedIn(), (req, res) => {
   res.render('profile', { randomPerson: req.user })
 });
 
-router.get('/edit', Redirect.ifNotLoggedIn(), (req, res) => {
-  res.sendStatus(200);
-});
+// router.get('/settings', Redirect.ifNotLoggedIn(), (req, res) => {
+//   	res.render('settings');
+//   // res.sendStatus(200);
+// });
 
 module.exports = router;

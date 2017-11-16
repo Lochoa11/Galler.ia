@@ -30,3 +30,33 @@
 .dropzoneForm {	
 	background-color: transparent;
 }
+
+/*.myDropDown{
+	background-color: transparent;
+	height:auto;
+}*/
+
+.mybtn {
+	background-color: transparent;
+	height: auto;
+}
+/*.btn-secondary {
+	height: 100%;
+}
+.dropdown-toggle {
+	height: 100%;
+}*/
+
+.myATag {
+	background-color: grey;
+}
+
+.blah {
+	background-color: black;
+}
+
+
+.setting-content {
+	margin-top: 10px;
+	margin-bottom: 10px;
+}

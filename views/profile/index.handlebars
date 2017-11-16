@@ -8,17 +8,9 @@
     <div class="row" align="center">
       <div class="col-md-4 col-md-push-4">
           {{#if randomPerson.profilePicture}}
-            <img src= "images/profile-default.jpg" class="profile-picture img-circle"/>
+            <img src= {{randomPerson.profilePicture}} class="profile-picture img-circle"/>
           {{else}}              
-            {{!-- <form action="/images" class="dropzone profile-picture img-circle dropzoneForm">
-            </form> --}}
             <img src= "images/profile-default.jpg" class="profile-picture img-circle" id="myId"/>
-            <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-            <script type="text/javascript">
-              $(document).ready(function(){
-                $("img#myId").dropzone({ url: "/images/profile-default.jpg" });
-              });
-            </script>
           {{/if}}
       </div>
     </div>

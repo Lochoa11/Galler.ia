@@ -1,0 +1,72 @@
+<div class="container">
+	<div class="row" align="center">
+		<div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+		  <div class="panel panel-default">
+		    <div class="panel-heading" role="tab" id="headingOne">
+		      <h4 class="panel-title">
+		        <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
+		          Change name		         
+		        </a>
+		      </h4>
+		    </div>
+		    <div id="collapseOne" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne">
+		      <div class="panel-body">
+		      	<div class="col-md-4 col-md-push-4">
+		      		<form action="/settings" method="put">
+			      	  <div class="form-group">
+					      <input class="form-control setting-content" type="text" placeholder="First" align="center" name="newFirst">
+				          <input class="form-control setting-content" type="text" placeholder="Last" align="center" name="newLast">
+				          <button class="btn btn-primary setting-content" type="submit">Submit</button>
+			      	  </div>
+		      		</form>
+		      	</div>
+		      </div>
+		    </div>
+		  </div>
+		  <div class="panel panel-default">
+		    <div class="panel-heading" role="tab" id="headingTwo">
+		      <h4 class="panel-title">
+		        <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+		          Change email
+		        </a>
+		      </h4>
+		    </div>
+		    <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
+		      <div class="panel-body">
+			      	<div class="col-md-4 col-md-push-4">
+			      		<form action="/settings" method="post">
+				      		<div class="form-group">
+						      	<input class="form-control setting-content" type="Email" placeholder="Email" align="center">
+						      	<button class="btn btn-primary setting-content" type="submit">Submit</button>
+				      		</div>
+			      		</form>
+			      	</div>
+		      </div>
+		    </div>
+		  </div>
+		  <div class="panel panel-default">
+		    <div class="panel-heading" role="tab" id="headingThree">
+		      <h4 class="panel-title">
+		        <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+		          Forgot password
+		        </a>
+		      </h4>
+		    </div>
+		    <div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
+		      <div class="panel-body">
+		      	<div class="col-md-4 col-md-push-4">
+		      		<form action="/settings" method="post">
+		      			<div class="form-group">
+		      				<input class="form-control setting-content" type="password" placeholder="previous password">
+					      	<input class="form-control setting-content" type="password" placeholder="password">
+					      	<input class="form-control setting-content" type="password" placeholder="confirm password">
+					      	<button class="btn btn-primary setting-content" type="submit">Submit</button>
+		      			</div>
+		      		</form>
+		      	</div>
+		      </div>
+		    </div>
+		  </div>
+		</div>
+	</div>
+</div>
