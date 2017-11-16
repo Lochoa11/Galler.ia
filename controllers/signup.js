@@ -18,7 +18,7 @@ router.post('/', Redirect.ifLoggedIn(), (req, res) => {
     res.redirect('profile');
   }).catch((err) => {
     res.redirect('/');
-    alert(err);
+    // show error
   });
 });
 
