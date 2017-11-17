@@ -9,14 +9,19 @@
 		        </a>
 		      </h4>
 		    </div>
-		    <div id="collapseOne" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne">
+		    <div id="collapseOne" class="panel-collapse collapse {{#if nameChange}} in {{/if}}" role="tabpanel" aria-labelledby="headingOne">
 		      <div class="panel-body">
 		      	<div class="col-md-4 col-md-push-4">
-		      		<form action="/settings" method="put">
+		      		<form action="/settings/nameChange" method="post">
 			      	  <div class="form-group">
-					      <input class="form-control setting-content" type="text" placeholder="First" align="center" name="newFirst">
-				          <input class="form-control setting-content" type="text" placeholder="Last" align="center" name="newLast">
+					      <input class="form-control setting-content name" type="text" placeholder="First" align="center" name="newFirst">
+				          <input class="form-control setting-content name" type="text" placeholder="Last" align="center" name="newLast">
 				          <button class="btn btn-primary setting-content" type="submit">Submit</button>
+				          {{#if nameChange}}
+				          	<div class="status">
+				          		<p>Successfully updated name to {{newFirstName}} {{newLastName}}</p>
+				          	</div>				        
+				          {{/if}}
 			      	  </div>
 		      		</form>
 		      	</div>
@@ -31,13 +36,18 @@
 		        </a>
 		      </h4>
 		    </div>
-		    <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
+		    <div id="collapseTwo" class="panel-collapse collapse {{#if emailChange}} in {{/if}}" role="tabpanel" aria-labelledby="headingTwo">
 		      <div class="panel-body">
 			      	<div class="col-md-4 col-md-push-4">
-			      		<form action="/settings" method="post">
+			      		<form action="/settings/emailChange" method="post">
 				      		<div class="form-group">
-						      	<input class="form-control setting-content" type="Email" placeholder="Email" align="center">
+						      	<input class="form-control setting-content" type="Email" placeholder="Email" align="center" name="email">
 						      	<button class="btn btn-primary setting-content" type="submit">Submit</button>
+						      	{{#if emailChange}}
+						      		<div class="status">
+						      			<p>Successful email change to {{newEmail}}</p>
+						      		</div>
+						      	{{/if}}
 				      		</div>
 			      		</form>
 			      	</div>
@@ -48,18 +58,18 @@
 		    <div class="panel-heading" role="tab" id="headingThree">
 		      <h4 class="panel-title">
 		        <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-		          Forgot password
+		          Change password
 		        </a>
 		      </h4>
 		    </div>
 		    <div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
 		      <div class="panel-body">
 		      	<div class="col-md-4 col-md-push-4">
-		      		<form action="/settings" method="post">
+		      		<form action="/settings/passwordChange" method="post">
 		      			<div class="form-group">
-		      				<input class="form-control setting-content" type="password" placeholder="previous password">
-					      	<input class="form-control setting-content" type="password" placeholder="password">
-					      	<input class="form-control setting-content" type="password" placeholder="confirm password">
+		      				<input class="form-control setting-content" type="password" placeholder="previous password" name="newPassword">
+					      	<input class="form-control setting-content" type="password" placeholder="new password" name="currentPassword">
+					      	<input class="form-control setting-content" type="password" placeholder="confirm password" name="currentPasswordRetyped">
 					      	<button class="btn btn-primary setting-content" type="submit">Submit</button>
 		      			</div>
 		      		</form>
