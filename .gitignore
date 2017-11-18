@@ -1,6 +1,9 @@
 # folders
 .vscode/
 node_modules/
+temp/
+.temp/
+.DS_Store
 
 # Logs
 logs
@@ -17,3 +20,4 @@ package-lock.json
 
 # secret
 keys.js
+aws.json

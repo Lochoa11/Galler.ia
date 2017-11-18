@@ -20,7 +20,7 @@ router.post('/', Redirect.ifLoggedIn(), (req, res) => {
     );
   }).catch((err) => {
     res.redirect('/');
-    alert(err);
+    // show error
   });
 });
 
