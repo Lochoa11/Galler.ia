@@ -2,10 +2,11 @@ const router = require('express').Router();
 const s3 = require('s3');
 const multer = require('multer');
 const path = require('path');
+const fs = require('fs');
+const models = require('../models');
 const Redirect = require('../middlewares/redirect');
 
 const upload = multer({ dest: './temp/' });
-
 const s3BucketName = 'gallerie1';
 const s3Region = 'us-east-1';
 
@@ -14,8 +15,8 @@ const client = s3.createClient({
   maxAsyncS3: 20,
   s3RetryCount: 3,
   s3RetryDelay: 1000,
-  multipartUploadThreshold: 20971520, // this is the default (20 MB)
-  multipartUploadSize: 15728640, // this is the default (15 MB)
+  multipartUploadThreshold: 20971520,
+  multipartUploadSize: 15728640,
   s3Options: {
     accessKeyId: 'AKIAIU3RYHKS5WEH7J4A',
     secretAccessKey: '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',
@@ -25,8 +26,20 @@ const client = s3.createClient({
 
 
 router.get('/', Redirect.ifNotLoggedIn(), (req, res) => {
-  let context = { randomPerson: req.user };
-  res.render('profile', context);
+  // TODO: Fetch all user pictures and display thumbanils
+  const user = req.user; // TODO: change this, wrong
+  models.Photos.findAll({
+    order: ['createdAt'],
+    where: {
+      UserId: req.user.id,
+    },
+  }).then((photos) => {
+    const context = {
+      user,
+      photos,
+    };
+    res.render('profile', context);
+  });
 });
 
 
@@ -41,9 +54,6 @@ router.get('/upload', (req, res) => {
 
 
 router.post('/upload', upload.single('file'), (req, res) => {
-  console.log(req.body); // form fields
-  console.log(req.file);
-
   const ext = path.extname(req.file.originalname);
   // Validate image file here
   const tempFile = `${req.file.destination}${req.file.filename}`; // temp/FILENAME
@@ -69,12 +79,17 @@ router.post('/upload', upload.single('file'), (req, res) => {
   });
 
   uploader.on('end', () => {
-    const s3BaseUrl = s3.getPublicUrlHttp(s3BucketName, s3KeyLocation, s3Region);
+    const s3Url = s3.getPublicUrlHttp(s3BucketName, s3KeyLocation, s3Region);
     // Create Photo
-    // Delete temp file
-    console.log(s3BaseUrl);
-    console.log('Done Uploading');
+    models.Photos.create({
+      title: req.body.title,
+      description: req.body.description,
+      image_url: s3Url,
+      UserId: req.user.id,
+    });
+    fs.unlink(tempFile);
     // Redirect to photo page
+    res.sendStatus(200);
   });
 });
 
