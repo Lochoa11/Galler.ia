@@ -2,14 +2,13 @@ const bodyParser = require('body-parser');
 const express = require('express');
 const expressSession = require('express-session');
 // const passport = require('passport');
+// const GoogleStrategy = require('passport-google-oauth20').Strategy;
+// const keys = require('./config/keys');
 const passport = require('./middlewares/authentication');
-const GoogleStrategy = require('passport-google-oauth20').Strategy;
-const keys = require('./config/keys');
 const models = require('./models');
 const viewHelpers = require('./middlewares/viewHelpers');
 
 const PORT = process.env.PORT || 8000;
-
 const app = express();
 
 app.use(bodyParser.json());
@@ -25,7 +24,7 @@ app.use(passport.session());
 //     clientID: keys.googleClientID,
 //     clientSecret: keys.googleClientSecret,
 //     callbackURL: '/auth/google/callback'
-//   }, 
+//   },
 //   (accessToken, refreshToken, profile, done) =>{
 //     console.log('access token', accessToken);
 //     console.log('refresh token', refreshToken);
@@ -39,14 +38,7 @@ app.use(passport.session());
 
 // app.get('/auth/google/callback', passport.authenticate('google'));
 
-// Uncomment the following if you want to serve up static assets.
-// (You must create the public folder)
-
 app.use(express.static('./public'));
-
-
-
-
 
 // Handlebars config
 const exphbs = require('express-handlebars');
@@ -61,7 +53,6 @@ app.use(viewHelpers.register());
 
 // Load up all of the controllers
 const controllers = require('./controllers');
-
 app.use(controllers);
 
 
