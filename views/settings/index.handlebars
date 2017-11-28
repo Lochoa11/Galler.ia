@@ -18,7 +18,7 @@
 				          <input class="form-control setting-content name" type="text" placeholder="Last" align="center" name="newLast">
 				          <button class="btn btn-primary setting-content" type="submit">Submit</button>
 				          {{#if nameChange}}
-				          	<div class="status">
+				          	<div class="status-success">
 				          		<p>Successfully updated name to {{newFirstName}} {{newLastName}}</p>
 				          	</div>				        
 				          {{/if}}
@@ -44,7 +44,7 @@
 						      	<input class="form-control setting-content" type="Email" placeholder="Email" align="center" name="email">
 						      	<button class="btn btn-primary setting-content" type="submit">Submit</button>
 						      	{{#if emailChange}}
-						      		<div class="status">
+						      		<div class="status-success">
 						      			<p>Successful email change to {{newEmail}}</p>
 						      		</div>
 						      	{{/if}}
@@ -57,20 +57,26 @@
 		  <div class="panel panel-default">
 		    <div class="panel-heading" role="tab" id="headingThree">
 		      <h4 class="panel-title">
-		        <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-		          Change password
-		        </a>
+		        <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">Change password</a>
 		      </h4>
 		    </div>
-		    <div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
+		    <div id="collapseThree" class="panel-collapse collapse {{#if keepOpen}} in {{/if}}" role="tabpanel" aria-labelledby="headingThree">
 		      <div class="panel-body">
 		      	<div class="col-md-4 col-md-push-4">
 		      		<form action="/settings/passwordChange" method="post">
 		      			<div class="form-group">
-		      				<input class="form-control setting-content" type="password" placeholder="previous password" name="newPassword">
-					      	<input class="form-control setting-content" type="password" placeholder="new password" name="currentPassword">
-					      	<input class="form-control setting-content" type="password" placeholder="confirm password" name="currentPasswordRetyped">
-					      	<button class="btn btn-primary setting-content" type="submit">Submit</button>
+		      				<input class="form-control setting-content old-pass" type="password" placeholder="previous password" name="oldPassword">
+					      	<input class="form-control setting-content new-pass" type="password" placeholder="new password" name="newPassword">
+					      	<input class="form-control setting-content new-pass-second" type="password" placeholder="confirm password" name="newPasswordRetyped">
+					      	<button class="btn btn-primary setting-content submit-password" type="submit" onclick="">Submit</button>
+					      	{{#if cannotChangePassword}}
+					      		<div class="status-fail">
+					      			<p>Cannot change password</p>
+					      		</div>
+					      	{{/if}}
+					      	<div class="status-fail status-new-pass">
+					      		<p>New passwords don't match</p>
+					      	</div>
 		      			</div>
 		      		</form>
 		      	</div>

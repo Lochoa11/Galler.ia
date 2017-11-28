@@ -2,6 +2,7 @@ const router = require('express').Router();
 const models = require('../models');
 const Redirect = require('../middlewares/redirect');
 const passport = require('../middlewares/authentication');
+const bcrypt = require('bcrypt-nodejs');
 
 router.get('/', Redirect.ifNotLoggedIn(), (req, res) => {
   res.render('settings');
@@ -55,6 +56,45 @@ router.post('/emailChange', (req, res) => {
 });
 
 router.post('/passwordChange', (req, res) => {
+	console.log(req.user.password);
+	if(passport.passwordsMatch(req.body.oldPassword, req.user.password)){
+		
+	}else{
+		res.render('settings', {
+			cannotChangePassword: true,	
+			keepOpen: true,		
+		})
+	}
+
+	// let storedPassword;
+	// models.Users.findOne({
+	// 	where:{
+	// 		id:req.user.id,
+	// 	}
+	// }).then((result) =>{
+
+	// 	storedPassword = result["dataValues"]["password"];
+	// 	let oldPasswordHashed = bcrypt.hashSync(req.body.oldPassword, null);
+	// 	if(storedPassword != oldPasswordHashed){
+	// 		return;
+	// 	}
+	// });
+	
+
+	// // bcrypt.hash(req.body.oldPassword, null, null, null);
+	// console.log(oldPassword);
+
+ // Users.beforeCreate(user =>
+ //    new sequelize.Promise((resolve) => {
+ //      bcrypt.hash(user.password, null, null, (err, hashedPassword) => {
+ //        resolve(hashedPassword);
+ //      });
+ //    }).then((hashedPassword) => {
+ //      user.password = hashedPassword;
+ //    }));
+
+	// console.log(storedPassword);
+	// console.log(storedPassword);
 	// console.log(user.password);
 	// oldPassword = models.Users.findOne({
 	// 	where:{

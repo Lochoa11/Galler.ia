@@ -61,10 +61,12 @@
 	margin-bottom: 10px;
 }
 
-.status {
+.status-success {
 	color: green;
 }
-
+.status-fail {
+	color: red;
+}
 .name{
 	text-transform: capitalize;
 }

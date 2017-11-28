@@ -49,14 +49,13 @@ module.exports = (sequelize, DataTypes) => {
     },
   });
 
-  Users.beforeCreate(user =>
-    new sequelize.Promise((resolve) => {
+  Users.beforeCreate(user => new sequelize.Promise((resolve) => {
       bcrypt.hash(user.password, null, null, (err, hashedPassword) => {
         resolve(hashedPassword);
       });
-    }).then((hashedPassword) => {
+  }).then((hashedPassword) => {
       user.password = hashedPassword;
-    }));
+  }));
 
   Users.associate = (models) => {
     models.Users.hasMany(models.Photos);
