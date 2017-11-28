@@ -66,17 +66,22 @@
 		      		<form action="/settings/passwordChange" method="post">
 		      			<div class="form-group">
 		      				<input class="form-control setting-content old-pass" type="password" placeholder="previous password" name="oldPassword">
-					      	<input class="form-control setting-content new-pass" type="password" placeholder="new password" name="newPassword">
-					      	<input class="form-control setting-content new-pass-second" type="password" placeholder="confirm password" name="newPasswordRetyped">
+					      	<input class="form-control setting-content new-pass" type="password" placeholder="new password" name="newPassword" id="newPassword">
+					      	<input class="form-control setting-content new-pass-second" type="password" placeholder="confirm password" name="newPasswordRetyped" id="newPasswordRetyped">
+				      		<div>
+						      	<span id="message"></span>
+				      		</div>
 					      	<button class="btn btn-primary setting-content submit-password" type="submit" onclick="">Submit</button>
 					      	{{#if cannotChangePassword}}
 					      		<div class="status-fail">
-					      			<p>Cannot change password</p>
+					      			<p>Incorrect password.</p>
+					      		</div>
+				      		{{/if}}
+				      		{{#if passwordChanged}}
+					      		<div class="status-success">
+					      			<p>Password changed.</p>
 					      		</div>
 					      	{{/if}}
-					      	<div class="status-fail status-new-pass">
-					      		<p>New passwords don't match</p>
-					      	</div>
 		      			</div>
 		      		</form>
 		      	</div>
