@@ -23,8 +23,16 @@
           <ul class="nav navbar-nav navbar-right">
             <li><a href="/login">Upload</a></li>
             <li><a href="/login">Donate</a></li>
-            {{#if cur_user}}
-              <li><a href="/profile">My Account</a></li>
+            {{#if cur_user}}              
+              <li class="dropdown">
+                  <a class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    My Account
+                  </a>
+                  <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">                    
+                    <a class="list-group-item" href="/profile">My Profile</a>
+                    <a class="list-group-item" href="/settings">Settings</a>
+                  </div>              
+              </li>
               <li id="logout"><a href="/logout">Logout</a></li>
             {{ else }}
               <li><a href="/login">Login</a></li>
@@ -37,6 +45,6 @@
     <div class="push-down">
       {{{ body }}}
     </div>
-  </body>
     {{> scripts }}
+  </body>
 </html>

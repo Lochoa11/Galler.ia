@@ -26,6 +26,7 @@ const client = s3.createClient({
 
 
 router.get('/', Redirect.ifNotLoggedIn(), (req, res) => {
+
   // TODO: Fetch all user pictures and display thumbanils
   const user = req.user; // TODO: change this, wrong
   models.Photos.findAll({
@@ -42,10 +43,6 @@ router.get('/', Redirect.ifNotLoggedIn(), (req, res) => {
   });
 });
 
-
-router.get('/edit', Redirect.ifNotLoggedIn(), (req, res) => {
-  res.sendStatus(200);
-});
 
 
 router.get('/upload', (req, res) => {

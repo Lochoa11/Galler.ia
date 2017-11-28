@@ -1,4 +1,5 @@
 module.exports = (sequelize, DataTypes) => {
+  
   const Photos = sequelize.define('Photos', {
     title: DataTypes.STRING,
     image_url: DataTypes.STRING,

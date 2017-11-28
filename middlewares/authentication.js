@@ -53,4 +53,5 @@ passport.redirectIfLoggedIn = route =>
 passport.redirectIfNotLoggedIn = route =>
   (req, res, next) => (req.user ? next() : res.redirect(route));
 
+passport.passwordsMatch = passwordsMatch;
 module.exports = passport;
