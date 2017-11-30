@@ -1,0 +1,15 @@
+<div class="container">
+		{{!-- <p>hello</p> --}}
+	{{#each Subscriptions}}
+	<div class="row">
+		<h1>{{Subscriptions.user}}</h1>
+			{{#each photos}}
+				<div class="col-md-4">
+					<a href="/photos/{{this.id}}"><img class="img-responsive thumbnail" src={{this.image_url}}/></a>
+				</div>	
+			{{/each}}
+		</div>
+		<p>hello</p>
+	</div>
+	{{/each}}
+</div>

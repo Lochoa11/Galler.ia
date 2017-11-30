@@ -1,8 +1,8 @@
-  
+<div>  
   <h2>Upload Your Masterpiece</h2>
   <div class="col-md-6">
-      <br/>
-      <form method="post" action="/profile/upload" encType="multipart/form-data">
+  <br/>
+    <form method="post" action="/profile/upload" encType="multipart/form-data">
       <div>
         <input name="file" type="file" accept="image/*"/>
         <label for="file">Please select an image file.</label>
@@ -10,11 +10,13 @@
       </div>
       <br/>
       <label for="title">Title:</label>
-      <input type="text" name="title"><br><br>
+      <input type="text" name="title">
+      <br/>
+      <br/>
       <label for="description">Description:</label>
-      <textarea class="form-control" name="description" rows="3"></textarea><br>
+      <textarea class="form-control" name="description" rows="3"></textarea>
+      <br/>
       <button class="btn btn-primary" type="submit">Upload</button>
-     </form> 
+    </form> 
   </div>
-
 </div>

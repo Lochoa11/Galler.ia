@@ -12,18 +12,18 @@
 		    <div id="collapseOne" class="panel-collapse collapse {{#if nameChange}} in {{/if}}" role="tabpanel" aria-labelledby="headingOne">
 		      <div class="panel-body">
 		      	<div class="col-md-4 col-md-push-4">
-		      		<form action="/settings/nameChange" method="post">
-			      	  <div class="form-group">
-					      <input class="form-control setting-content name" type="text" placeholder="First" align="center" name="newFirst">
-				          <input class="form-control setting-content name" type="text" placeholder="Last" align="center" name="newLast">
-				          <button class="btn btn-primary setting-content" type="submit">Submit</button>
-				          {{#if nameChange}}
-				          	<div class="status-success">
-				          		<p>Successfully updated name to {{newFirstName}} {{newLastName}}</p>
-				          	</div>				        
-				          {{/if}}
-			      	  </div>
-		      		</form>
+		      	  <form action="/settings/nameChange" method="post">
+			    	<div class="form-group">
+					  <input class="form-control setting-content name" type="text" placeholder="First" align="center" name="newFirst">
+				      <input class="form-control setting-content name" type="text" placeholder="Last" align="center" name="newLast">
+				      <button class="btn btn-primary setting-content" type="submit">Submit</button>
+				      {{#if nameChange}}
+				      	<div class="status-success">
+				          <p>Successfully updated name to {{newFirstName}} {{newLastName}}</p>
+				        </div>				        
+				      {{/if}}
+			      	</div>
+		      	  </form>
 		      	</div>
 		      </div>
 		    </div>

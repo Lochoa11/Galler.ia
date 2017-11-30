@@ -24,7 +24,7 @@
 }*/
 
 .push-down{
-	margin-top: 50px;
+	margin-top: 100px;
 }
 
 .dropzoneForm {	
@@ -69,4 +69,23 @@
 }
 .name{
 	text-transform: capitalize;
+}
+.expand{
+	width: auto;
+}
+.navbar-center{
+	position: absolute;
+	width: 100%;
+	text-align: center;	
+	margin-top: 10px;
+	height: 100%;
+}
+
+.list-size{
+	height: 100%;
+	width: 100%;
+}
+
+#search{
+	width: 400px;
 }
