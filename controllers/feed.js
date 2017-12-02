@@ -7,38 +7,50 @@ router.get('/', (req, res) => {
 			UserId: req.user.id,
 		},
 	}).then((Subscriptions) =>{
-		console.log(Subscriptions);
-		// console.log(Subscriptions);
-		// models.Photos.findAll({
-		// 	where:{
-		// 		UserId: Subscriptions.user,
-		// 	}
-		// })
+		const all = [];
+		Subscriptions.forEach((tuple)=>{			
+			// console.log(tuple.dataValues.user);
+			// console.log("I AM OVER HERE TYPING THIS **************************************");
+			models.Users.findOne({
+				where:{
+					id: tuple.dataValues.user,
+				},
+			}).then((user) =>{				
+				// res.render('feed', user.dataValues);
+				// console.log(user.dataValues.firstName);
+				const tempUserObject = [];
+				tempUserObject.push({name:user.dataValues.firstName +" "+ user.dataValues.lastName});
+				all.push(tempUserObject);
+				// console.log(all);
+				models.Photos.findAll({
+					where:{
+						UserId:user.id,
+					},
+				}).then((photos)=>{
+					console.log(photos);
+					
+					// photos.forEach((photo) =>{
+					// 	tempUserObject.push(photo);
+					// });
+				});
+				// all.push(tempUserObject);
+				// console.log(user.dataValues.firstName);
+				// res.render('feed', user.dataValues);
+			})
+
+		});
+		// console.log(all);
+		// res.render('feed', all);
+		// console.log(Subscriptions.dataValues.user);
 		// const context = {
-		// 	user:{
-		// 		models.Users.findOne({
-		// 			where:{
-		// 				UserId:Subscriptions.user,
-		// 			},
-		// 		});
-		// 	},
-		// 	photos:{
-		// 		models.Photos.findAll({
-		// 			where:{
-		// 				UserId:Subscriptions.user,
-		// 			},
-		// 		});
-		// 	},
-		// };
-		const context = {
-			Subscriptions,
-		}
+		// 	Subscriptions,
+		// }
 		// models.Photos.findAll({
 		// 	where:{
 		// 		UserId: Subscriptions.user,
 		// 	},
 		// })
-		res.render('feed', context);
+		// res.render('feed', context);
 	});
 });
 
