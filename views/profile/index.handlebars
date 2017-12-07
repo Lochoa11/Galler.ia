@@ -1,0 +1,37 @@
+  <header>
+  <div class="container profile-name-cover">
+    {{#if randomPerson.coverPicture}}
+      <img src = "images/background.jpg" class="cover-image"/>
+    {{else}}
+       <img src = "images/background.jpg" class="cover-image"/>
+    {{/if}}
+    <div class="row" align="center">
+      <div class="col-md-4 col-md-push-4">
+          {{#if randomPerson.profilePicture}}
+            <img src= {{randomPerson.profilePicture}} class="profile-picture img-circle"/>
+          {{else}}              
+            <img src= "images/profile-default.jpg" class="profile-picture img-circle" id="myId"/>
+          {{/if}}
+      </div>
+    </div>
+    <div class="row" align="center">
+      <div class="col-md-6 col-md-push-3">
+        <h1>{{ user.firstName }} {{ user.lastName }}</h1>
+      </div>
+    </div>
+  </div>
+</header>
+
+<div class="container profile-content push-down">
+	<div class="row">
+		<a class="btn btn-info" href="http://localhost:8000/profile/upload/"> Upload Photo</a>
+	</div>
+</div>
+
+<div class="image_grid">
+		{{#each photos}}
+			<div class="col-md-4">
+				<a href="/photos/{{this.id}}"><img class="img-responsive thumbnail" src={{this.image_url}} /> </a>
+			</div>
+		{{/each}}
+</div>

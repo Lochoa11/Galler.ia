@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html" charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->    
+    <title>Galler.ia</title>
+    {{> stylesheets }}
+  </head>
+  <body>
+    <nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+      <div class="container-fluid">
+        <div class="navbar-header page-scroll">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+            <span class="sr-only">Toggle navigation</span>
+            Menu <i class="fa fa-bars"></i>
+          </button>
+          <a class="navbar-brand" href="/">Galler.ia</a>
+        </div>
+
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+          <ul class="nav navbar-nav navbar-right">
+            <li><a href="/login">Upload</a></li>
+            <li><a href="/login">Donate</a></li>
+            {{#if cur_user}}              
+              <li class="dropdown">
+                  <a class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    My Account
+                  </a>
+                  <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">                    
+                    <a class="list-group-item" href="/profile">My Profile</a>
+                    <a class="list-group-item" href="/settings">Settings</a>
+                  </div>              
+              </li>
+              <li id="logout"><a href="/logout">Logout</a></li>
+            {{ else }}
+              <li><a href="/login">Login</a></li>
+              <li><a href="/signup">Sign Up</a></li>
+            {{/if}}
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <div class="push-down">
+      {{{ body }}}
+    </div>
+    {{> scripts }}
+  </body>
+</html>
