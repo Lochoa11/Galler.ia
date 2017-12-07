@@ -1,8 +1,16 @@
 .slideBar {
-    background-image: url("https://upload.wikimedia.org/wikipedia/commons/b/b6/Lower_Manhattan_from_Jersey_City_November_2014_panorama_3.jpg");
+    background-image: url("http://www.christies.com/img/departmentimages/74/post-war-and-contemporary-art-banner-FINAL_74_1_20170105132113.jpg");
     background-size: 100%, 100%;
+    font-family: 'Barlow Condensed', sans-serif;
     font-weight: bold;
     text-align: center;
+    color: white;
+
+}
+.feedGrid {
+    background-image: url("https://afremov.com/image.php?type=P&id=18208");
+    background-size: 100%, 100%;
+    font-family: 'Barlow Condensed', sans-serif;
     color: white;
 }
 
