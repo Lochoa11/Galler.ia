@@ -5,14 +5,15 @@
     font-size: : 100px;
     font-weight: normal;
     text-align: center;
-    color: white;
+    color: black;
 }
 
 .feedGrid {
-    background-image: url("https://static.pexels.com/photos/450597/pexels-photo-450597.jpeg");
-    background-size: 100%, 100%;
+    background-image: url("https://alterego.gallery/wp-content/uploads/2016/05/AlterEgo-Gallery-empty.jpg");
+    background-repeat: no-repeat;  
+    background-size: 100%, 100%;  
     font-family: 'Barlow Condensed', sans-serif;
-    color: white;
+    color: black;
 }
 
 h1 {
@@ -25,3 +26,6 @@ h2 {
     font-size: 50px;"
 }
 
+body {
+    background-image: url("https://alterego.gallery/wp-content/uploads/2016/05/AlterEgo-Gallery-empty.jpg");    
+}
