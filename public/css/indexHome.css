@@ -1,16 +1,25 @@
 .slideBar {
-    background-image: url("http://www.christies.com/img/departmentimages/74/post-war-and-contemporary-art-banner-FINAL_74_1_20170105132113.jpg");
-    background-size: 100%, 100%;
     font-family: 'Barlow Condensed', sans-serif;
-    font-weight: bold;
+    font-size: : 100px;
+    font-weight: normal;
     text-align: center;
     color: white;
-
 }
+
 .feedGrid {
     background-image: url("https://afremov.com/image.php?type=P&id=18208");
     background-size: 100%, 100%;
     font-family: 'Barlow Condensed', sans-serif;
     color: white;
+}
+
+h1 {
+    padding-top: 5px; 
+    font-size: 70px; 
+    font-weight: bold;
+}
+
+h2 {
+    font-size: 50px;
 }
 
