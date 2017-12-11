@@ -1,10 +1,12 @@
-<div class="col-md-12">
-  <div class="row">
-    <h2> {{photo.title}}</h2>
+<div class="background">
+  <div class="col-md-12">
+    <div class="row">
+      <h2> {{photo.title}}</h2>
+    </div>
+    <div class="col-md-6 center">
+      <img class="img-responsive" src={{photo.image_url}}
+      <div class="well">
+      <p>{{photo.description}}</p>
+    </div>
   </div>
-  <div class="col-md-6">
-    <img class="img-responsive" src={{photo.image_url}}
-    <p>{{photo.description}}</p>
-  </div>
-
 </div>

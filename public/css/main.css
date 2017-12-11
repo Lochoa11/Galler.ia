@@ -76,3 +76,14 @@
     height: 400px;
 }
 
+.background {
+	background-image: url("https://alterego.gallery/wp-content/uploads/2016/05/AlterEgo-Gallery-empty.jpg");    
+	background-repeat: no-repeat;  
+    background-size: 100%, 100%;  
+}
+
+html {
+	background-image: url("https://alterego.gallery/wp-content/uploads/2016/05/AlterEgo-Gallery-empty.jpg");   
+	background-repeat: no-repeat;  
+    background-size: 100%, 100%; 
+}
