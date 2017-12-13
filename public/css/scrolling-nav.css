@@ -18,5 +18,7 @@ section {
   padding: 150px 0;
 }
 
-
+header .navbar {
+	font-family: 'Barlow Condensed', sans-serif;
+}
 
