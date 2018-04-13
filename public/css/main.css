@@ -70,6 +70,7 @@
 .name{
 	text-transform: capitalize;
 }
+/*<<<<<<< HEAD*/
 .expand{
 	width: auto;
 }
@@ -86,6 +87,12 @@
 	width: 100%;
 }
 
-#search{
+/*#search{
 	width: 400px;
+=======*/
+.slidePicture{
+    display: block;
+    width: 100%;
+    height: 400px;
+/*>>>>>>> development*/
 }
