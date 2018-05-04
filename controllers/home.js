@@ -5,7 +5,13 @@ const router = express.Router();
 
 
 router.get('/', (req, res) => {
-  res.render('home', { title: 'Home Page' });
+  models.Photos.findAll({
+  	order: [['createdAt', 'DESC']],
+  	limit: 20,  	
+  }).then((photos) => {
+  	res.render('home', { title: 'Home Page', photosList: photos });
+  })
+  
 });
 
 router.get('/logout', (req, res, next) => {

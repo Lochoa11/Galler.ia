@@ -20,15 +20,15 @@
         </div>
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
           <ul class="nav navbar-nav navbar-right">
-            <li><a href="/users">Users</a></li>          
             {{#if cur_user}}              
+              <li><a href="/users">Users</a></li>          
               <li class="dropdown">
                   <a class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     My Account
                   </a>
                   <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">                    
                     <a class="list-group-item" href="/profile">My Profile</a>
-                    <a class="list-group-item" href="/feed">My Feed</a>{{!--working on this--}}
+                    {{!-- <a class="list-group-item" href="/feed">My Feed</a> --}}{{!--working on this--}}
                     <a class="list-group-item" href="/settings">Settings</a>
                   </div>              
               </li>

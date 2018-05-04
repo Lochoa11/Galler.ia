@@ -1,23 +1,19 @@
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.css">
+{{!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.css"> --}}
 
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js">
-</script>
+{{!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script> --}}
 
-<script src="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.min.js">
-</script>
+{{!-- <script src="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.min.js"></script> --}}
 
 <link rel="stylesheet" type="text/css" href="css/indexHome.css">
     
 <div class="slideBar">
-  <h1 style = "padding-top: 5px">TOP PICKS</h1>
+  <h1 style = "padding-top: 5px">Latest Uploads</h1>
   <div align="center">
-  <ul class="bxslider" align="center" style='height: 100%; width: 100%; object-fit: contain'>
-    <li><img class="slidePicture" src="images/picture1.jpeg"></li>
-    <li><img class="slidePicture" src="images/picture2.jpg"></li>
-    <li><img class="slidePicture" src="images/picture3.jpg"></li>
-    <li><img class="slidePicture" src="images/picture4.jpeg"></li>
-    <li><img class="slidePicture" src="images/picture5.jpeg"></li>
-  </ul>
+    <ul class="bxslider" align="center" style='height: 100%; width: 100%; object-fit: contain'>
+      {{#each photosList}}
+        <li><img class="slidePicture" src="{{this.image_url}}"></li>
+      {{/each}}
+    </ul>
   </div>
 </div>
 
@@ -26,8 +22,16 @@
   <h1 class="my-4 text-center text-lg-left">Fresh Picks</h1>
 
   <div class="row text-center text-lg-left">
+    {{#each photosList}}
+      <div class="col-lg-3 col-md-4 col-xs-6">
+        <a href="localhost:8000/users/{{this.UserId}}" class="d-block mb-4 h-100">
+          <img class="img-fluid img-thumbnail" src="{{this.image_url}}" alt="">
+        </a>
+      </div>
+    {{/each}}
 
-    <div class="col-lg-3 col-md-4 col-xs-6">
+
+    {{!-- <div class="col-lg-3 col-md-4 col-xs-6">
       <a href="#" class="d-block mb-4 h-100">
         <img class="img-fluid img-thumbnail" src="http://placehold.it/400x300" alt="">
       </a>
@@ -86,7 +90,7 @@
       <a href="#" class="d-block mb-4 h-100">
         <img class="img-fluid img-thumbnail" src="http://placehold.it/400x300" alt="">
       </a>
-    </div>
+    </div> --}}
   </div>
 
 </div>

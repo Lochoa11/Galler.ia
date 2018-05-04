@@ -1,4 +1,4 @@
-  <header>
+<header>
   <div class="container profile-name-cover">
     {{#if randomPerson.coverPicture}}
       <img src = "images/background.jpg" class="cover-image"/>
@@ -12,6 +12,7 @@
           {{else}}              
             <img src= "images/profile-default.jpg" class="profile-picture img-circle" id="myId"/>
           {{/if}}
+          {{!-- <button class="someButtonClass">hello</button> --}}
       </div>
     </div>
     <div class="row" align="center">
@@ -24,7 +25,7 @@
 
 <div class="container profile-content push-down">
 	<div class="row">
-		<a class="btn btn-info" href="http://localhost:8000/profile/upload/"> Upload Photo</a>
+		<a class="btn btn-info" href="http://localhost:8000/profile/upload/"> Upload Photo </a>
 	</div>
 </div>
 

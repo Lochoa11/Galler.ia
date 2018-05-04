@@ -1,3 +1,4 @@
+
 const router = require('express').Router();
 const s3 = require('s3');
 const multer = require('multer');
@@ -86,7 +87,8 @@ router.post('/upload', upload.single('file'), (req, res) => {
     });
     fs.unlink(tempFile);
     // Redirect to photo page
-    res.sendStatus(200);
+    // res.sendStatus(200);
+    res.render('profile/uploadcomplete');
   });
 });
 

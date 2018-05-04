@@ -3,7 +3,7 @@
     	auto: true,
     	autoControls: true,
     	stopAutoOnClick: true,
-    	pager: true,
+    	pager: false,
     	slideWidth: 600
     });
     $('#newPassword, #newPasswordRetyped').on('keyup', function(){
