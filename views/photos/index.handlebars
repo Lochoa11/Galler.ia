@@ -1,12 +1,19 @@
-<div class="col-md-12">
+<div class="col-md-12" align="center">
   <div class="row">
     <h2> {{photo.title}}</h2>
   </div>
-  <div class="col-md-6">
+  <div class="col-md-6 col-md-push-3">
     <img class="img-responsive" src={{photo.image_url}}>
     <p>{{photo.description}}</p>
-    <form>
-    	<button class="btn btn-primary">Delete This Photo</button>
-    </form>		    
+    {{#if isSelf}}
+      <form method="post" action="/photos/delete">
+        <input type="hidden" name="photoID" value={{photo.id}}>
+        <button class="btn btn-primary">Delete This Photo now</button>
+      </form>
+    {{/if}}
+    <br>
+    <form method="get" action="/users/{{photo.UserId}}">
+      <button class="btn btn-primary">back</button>		    
+    </form>
   </div>
 </div>
