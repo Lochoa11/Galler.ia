@@ -1,0 +1,21 @@
+<header>
+	<h1>My Feed</h1>
+</header>
+<div class="container">
+  <div class="row">
+	{{#each users}}
+	<div class="row">
+		<div class="col-md-2">
+			<a href="users/{{this.id}}">
+				<img src="/images/profile-default.jpg" class="img-circle list-size">
+			</a>
+		</div>
+		<div class="col-md-10">
+			<div>
+			    <p>{{this.firstName}} {{this.lastName}}</p>
+			</div>
+		</div>
+	</div>
+	{{/each}}    
+  </div>
+</div>
