@@ -23,9 +23,9 @@
 	background-color: red;
 }*/
 
-/*.someButtonClass{
-	
-}*/
+.someButtonClass{
+	border-radius: 5px;
+}
 
 .push-down{
 	margin-top: 100px;
